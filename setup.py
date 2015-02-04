@@ -3,7 +3,7 @@ import os
 from setuptools import find_packages
 from setuptools import setup
 
-version = '3.1.1'
+version = '3.1.1-1'
 
 
 def read(*rnames):
@@ -25,6 +25,7 @@ setup(
     keywords='',
     author='Andreas Kaiser',
     author_email='disko@binary-punks.com',
+    url='https://github.com/disko/js.bootstrap_image_gallery',
     license='BSD',
     packages=find_packages(),
     namespace_packages=['js'],

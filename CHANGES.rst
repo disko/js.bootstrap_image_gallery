@@ -1,6 +1,11 @@
 CHANGES
 =======
 
+3.1.1-1 - 2015-02-04
+--------------------
+
+- Make ``jquery.blueimp-gallery.js`` depend on ``blueimp-gallery.js``.
+
 3.1.1 - 2015-02-03
 ------------------
 
