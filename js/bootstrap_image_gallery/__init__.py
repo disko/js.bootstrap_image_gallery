@@ -3,7 +3,7 @@ from fanstatic import Library
 from fanstatic import Resource
 from js.bootstrap import bootstrap_css
 from js.bootstrap import bootstrap_js
-
+from js.jquery import jquery
 
 library = Library('bootstrap_image_gallery', 'resources')
 
@@ -22,14 +22,19 @@ bootstrap_image_gallery_css = Resource(
 # JS
 blueimp_gallery_js = Resource(
     library,
+    'blueimp-gallery/js/blueimp-gallery.js',
+    minified='blueimp-gallery/js/blueimp-gallery.min.js',
+    depends=[jquery, ])
+jquery_blueimp_gallery_js = Resource(
+    library,
     'blueimp-gallery/js/jquery.blueimp-gallery.js',
     minified='blueimp-gallery/js/jquery.blueimp-gallery.min.js',
-    depends=[bootstrap_js, ])
+    depends=[blueimp_gallery_js, ])
 bootstrap_image_gallery_js = Resource(
     library,
     'blueimp-bootstrap-image-gallery/js/bootstrap-image-gallery.js',
     minified='blueimp-bootstrap-image-gallery/js/bootstrap-image-gallery.min.js',  # noqa
-    depends=[blueimp_gallery_js, ])
+    depends=[bootstrap_js, jquery_blueimp_gallery_js, ])
 
 # BW COMPAT
 gallery_css = bootstrap_image_gallery_css
